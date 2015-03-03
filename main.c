@@ -3,11 +3,8 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <unistd.h>
 struct client;
-
-
-
 
 static Display *display;
 static Window root;
@@ -161,7 +158,7 @@ static void run_terminal(void)
 	if (fork() == 0)
 	{
 		ret = system("xterm");
-		exit(0);
+		exit(ret);
 	}
 }
 
